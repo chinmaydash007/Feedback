@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Feedback</string>
+    <string-array name="sections">
+        <item>Section-A</item>
+        <item>Section-B</item>
+        <item>Section-C</item>
+    </string-array>
+    <string-array name="batch">
+        <item>2017-2021</item>
+        <item>2018-2022</item>
+    </string-array>
+    <string-array name="branch">
+        <item>CSE</item>
+        <item>ECE</item>
+        <item>MECH</item>
+    </string-array>
+    <string-array name="recognition">
+        <item>Profrossor</item>
+        <item>Associate Professor</item>
+    </string-array>
+
+
+</resources>
