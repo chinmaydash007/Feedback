@@ -46,7 +46,7 @@ public class ShowEligibleStudentForFeedback extends AppCompatActivity {
         studentRef = FirebaseDatabase.getInstance().getReference().child("Users").child("Student");
 
 
-        String student_index=student_batch+"_"+student_branch+"_"+student_section;
+        final String student_index=student_batch+"_"+student_branch+"_"+student_section;
         Query query=studentRef.orderByChild("student_index").equalTo(student_index);
 
 
@@ -68,6 +68,8 @@ public class ShowEligibleStudentForFeedback extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent1=new Intent(ShowEligibleStudentForFeedback.this,TeacherListActivity.class);
+                intent1.putExtra("student_index",student_index);
+
                 startActivity(intent1);
 
             }

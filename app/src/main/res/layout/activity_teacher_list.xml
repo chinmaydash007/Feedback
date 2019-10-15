@@ -26,6 +26,7 @@
         app:layout_anchor="@id/bottomAppBar"
         />
 
+
     <com.google.android.material.bottomappbar.BottomAppBar
         app:fabAlignmentMode="end"
         android:id="@+id/bottomAppBar"
@@ -39,6 +40,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            android:id="@+id/unselect_all_items"
+            android:layout_marginRight="8dp"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
