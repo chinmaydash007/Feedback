@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TeacherListActivity"></activity>
+        <activity android:name=".SingleFeedbackActivty"></activity>
+        <activity android:name=".FeedbackActivtiy" />
+        <activity android:name=".TeacherListActivity" />
         <activity android:name=".TeacherProfileActivty" />
         <activity android:name=".ShowEligibleStudentForFeedback" />
         <activity android:name=".SetupFeedbackActivity" />

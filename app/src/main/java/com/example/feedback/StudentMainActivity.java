@@ -2,15 +2,21 @@ package com.example.feedback;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.feedback.Adapter.StudentMainPageFeedbackAdapter;
 import com.example.feedback.Model.TeacherDetails;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -31,6 +37,10 @@ public class StudentMainActivity extends AppCompatActivity {
     String stduent_index;
     ArrayList<String> teacherinsidefeedbacklist;
     ArrayList<TeacherDetails> teacherDetailsArrayList;
+    StudentMainPageFeedbackAdapter studentMainPageFeedbackAdapter;
+    RecyclerView recyclerView;
+    Button entertoSubmit;
+
 
 
 
@@ -44,8 +54,31 @@ public class StudentMainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
 
+        entertoSubmit=findViewById(R.id.btn_submit);
+
+
+
         teacherinsidefeedbacklist = new ArrayList<>();
         teacherDetailsArrayList=new ArrayList<>();
+        recyclerView=findViewById(R.id.recyclerView);
+        studentMainPageFeedbackAdapter=new StudentMainPageFeedbackAdapter(this,teacherDetailsArrayList);
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(studentMainPageFeedbackAdapter);
+
+
+        entertoSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(StudentMainActivity.this,FeedbackActivtiy.class);
+                intent.putParcelableArrayListExtra("teacherdata",(ArrayList)teacherDetailsArrayList);
+
+
+                startActivity(intent);
+
+            }
+        });
+
 
 
 
@@ -104,10 +137,12 @@ public class StudentMainActivity extends AppCompatActivity {
     }
 
     private void fetchTeacherChoosenforFeedback(String stduent_index) {
+        teacherinsidefeedbacklist.clear();
         feedbackRef.child(stduent_index).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
+
                     for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                         teacherinsidefeedbacklist.add(dataSnapshot1.getKey());
 
@@ -125,6 +160,7 @@ public class StudentMainActivity extends AppCompatActivity {
     }
 
     private void addTeacherDetailstoTeacherDetailsArrayList(final ArrayList<String> teacherinsidefeedbacklist) {
+        teacherDetailsArrayList.clear();
         teacherRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -136,6 +172,9 @@ public class StudentMainActivity extends AppCompatActivity {
                     }
 
                 }
+                studentMainPageFeedbackAdapter.notifyDataSetChanged();
+
+
             }
 
             @Override

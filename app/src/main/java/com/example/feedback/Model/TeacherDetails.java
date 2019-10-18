@@ -1,7 +1,10 @@
 package com.example.feedback.Model;
 
-public class TeacherDetails {
-    String teacher_name,teacher_phone,email,profile_image,uid,profession,counter;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class TeacherDetails implements Parcelable {
+    String teacher_name, teacher_phone, email, profile_image, uid, profession, counter;
 
     public TeacherDetails() {
     }
@@ -15,6 +18,46 @@ public class TeacherDetails {
         this.profession = profession;
         this.counter = counter;
     }
+
+    public TeacherDetails(Parcel parcel) {
+        this.teacher_name = parcel.readString();
+        this.teacher_phone = parcel.readString();
+        this.email = parcel.readString();
+        this.profile_image = parcel.readString();
+        this.uid = parcel.readString();
+        this.profession = parcel.readString();
+        this.counter = parcel.readString();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(this.teacher_name);
+        parcel.writeString(this.teacher_phone);
+        parcel.writeString(this.email);
+        parcel.writeString(this.profile_image);
+        parcel.writeString(this.uid);
+        parcel.writeString(this.profession);
+        parcel.writeString(this.counter);
+    }
+
+    public static final Creator<TeacherDetails> CREATOR = new Creator<TeacherDetails>() {
+        @Override
+        public TeacherDetails createFromParcel(Parcel parcel) {
+            return new TeacherDetails(parcel);
+
+        }
+
+        @Override
+        public TeacherDetails[] newArray(int i) {
+            return new TeacherDetails[i];
+        }
+    };
+
 
     public String getTeacher_name() {
         return teacher_name;
@@ -71,4 +114,6 @@ public class TeacherDetails {
     public void setCounter(String counter) {
         this.counter = counter;
     }
+
+
 }
