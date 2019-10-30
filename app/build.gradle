@@ -33,14 +33,11 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.0.1'
     api 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
     implementation 'com.github.bumptech.glide:glide:4.10.0'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.annotation:annotation:1.0.2'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.firebaseui:firebase-ui-database:6.0.2'
     implementation 'com.github.sujithkanna:smileyrating:1.6.8'
-    implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
 
     testImplementation 'junit:junit:4.12'
