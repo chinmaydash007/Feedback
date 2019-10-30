@@ -19,7 +19,7 @@ Button show_student_list;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setup_feedback);
-        branch=findViewById(R.id.branch);
+        branch=findViewById(R.id.batch);
         batch=findViewById(R.id.batch);
         section=findViewById(R.id.section);
         show_student_list=findViewById(R.id.show_student_list);

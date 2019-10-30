@@ -13,7 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SingleFeedbackActivty"></activity>
+        <activity android:name=".FeedbackFinalResultActivity"></activity>
+        <activity android:name=".FeedbackResultOverall" />
+        <activity
+            android:name=".ui.login.ShowAllResult"
+            android:label="@string/title_activity_show_all_result" />
+        <activity android:name=".SingleFeedbackActivty" />
         <activity android:name=".FeedbackActivtiy" />
         <activity android:name=".TeacherListActivity" />
         <activity android:name=".TeacherProfileActivty" />

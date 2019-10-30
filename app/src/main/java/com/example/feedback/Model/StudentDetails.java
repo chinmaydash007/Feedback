@@ -1,12 +1,12 @@
 package com.example.feedback.Model;
 
 public class StudentDetails {
-String student_full_name,student_mobile_number,student_roll_no,student_section,student_branch,student_batch,profile_image,email,student_gender;
+String student_full_name,student_mobile_number,student_roll_no,student_section,student_branch,student_batch,profile_image,email,student_gender,uid,student_index;
 
     public StudentDetails() {
     }
 
-    public StudentDetails(String student_full_name, String student_mobile_number, String student_roll_no, String student_section, String student_branch, String student_batch, String profile_image, String email,String student_gender) {
+    public StudentDetails(String student_full_name, String student_mobile_number, String student_roll_no, String student_section, String student_branch, String student_batch, String profile_image, String email,String student_gender,String uid,String student_index) {
         this.student_full_name = student_full_name;
         this.student_mobile_number = student_mobile_number;
         this.student_roll_no = student_roll_no;
@@ -16,8 +16,26 @@ String student_full_name,student_mobile_number,student_roll_no,student_section,s
         this.profile_image = profile_image;
         this.email = email;
         this.student_gender=student_gender;
+        this.uid=uid;
+        this.student_index=student_index;
 
 
+    }
+
+    public String getStudent_index() {
+        return student_index;
+    }
+
+    public void setStudent_index(String student_index) {
+        this.student_index = student_index;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public String getStudent_gender() {

@@ -40,6 +40,15 @@ public class AdminMainActivity extends AppCompatActivity {
             }
         });
 
+        seeResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(AdminMainActivity.this,FeedbackResultOverall.class);
+                startActivity(intent);
+
+            }
+        });
+
     }
 
     @Override
