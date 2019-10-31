@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="10dp"
+    android:layout_margin="18dp"
+    app:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFDB0"
+        android:orientation="vertical">
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pie_chart_total"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            >
+
+
+        </com.github.mikephil.charting.charts.PieChart>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/teacher_profile_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:elevation="6dp"
+            android:src="@drawable/profile_image"
+            app:layout_constraintBottom_toBottomOf="@+id/pie_chart_total"
+            app:layout_constraintEnd_toEndOf="@+id/pie_chart_total"
+            app:layout_constraintStart_toStartOf="@+id/pie_chart_total"
+            app:layout_constraintTop_toTopOf="@+id/pie_chart_total"
+            app:layout_constraintVertical_bias="0.40" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pie_chart_param1"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toStartOf="@+id/pie_chart_param2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pie_chart_total"
+            android:elevation="4dp"
+
+            />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pie_chart_param2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/pie_chart_param1"
+            app:layout_constraintTop_toBottomOf="@+id/pie_chart_total"
+            android:elevation="4dp"
+
+            />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pie_chart_param3"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toStartOf="@+id/pie_chart_param4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pie_chart_param1"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            android:elevation="4dp"
+
+            />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pie_chart_param4"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/pie_chart_param3"
+            app:layout_constraintTop_toBottomOf="@+id/pie_chart_param2"
+            android:elevation="4dp"
+
+            />
+
+        <TextView
+            android:id="@+id/teacher_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/pie_chart_total"
+            app:layout_constraintStart_toStartOf="@+id/pie_chart_total"
+            app:layout_constraintTop_toBottomOf="@+id/pie_chart_total" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
