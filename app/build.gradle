@@ -38,6 +38,8 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-database:6.0.2'
     implementation 'com.github.sujithkanna:smileyrating:1.6.8'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    implementation "androidx.viewpager2:viewpager2:1.0.0-rc01"
+
 
 
     testImplementation 'junit:junit:4.12'

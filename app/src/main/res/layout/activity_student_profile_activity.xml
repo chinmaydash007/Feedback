@@ -76,8 +76,8 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textCapWords"
-                        android:imeOptions="actionNext"/>
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapWords" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -95,8 +95,8 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="phone"
-                        android:imeOptions="actionNext"/>
+                        android:imeOptions="actionNext"
+                        android:inputType="phone" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -141,9 +141,9 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
                         android:inputType="number"
-                        android:maxLength="2"
-                        android:imeOptions="actionNext"/>
+                        android:maxLength="2" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -159,10 +159,9 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textCapCharacters"
-                        android:maxLength="3"
                         android:imeOptions="actionNext"
-                        />
+                        android:inputType="textCapCharacters"
+                        android:maxLength="3" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -179,9 +178,9 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
                         android:inputType="number"
-                        android:maxLength="3"
-                        android:imeOptions="actionNext"/>
+                        android:maxLength="3" />
 
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
