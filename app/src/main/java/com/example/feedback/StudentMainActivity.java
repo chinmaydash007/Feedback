@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -40,6 +41,8 @@ public class StudentMainActivity extends AppCompatActivity {
     StudentMainPageFeedbackAdapter studentMainPageFeedbackAdapter;
     RecyclerView recyclerView;
     Button entertoSubmit;
+    CardView feedback_card;
+
 
 
 
@@ -55,6 +58,9 @@ public class StudentMainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("");
 
         entertoSubmit=findViewById(R.id.btn_submit);
+
+        feedback_card=findViewById(R.id.feedback_cardview);
+
 
 
 
@@ -142,14 +148,19 @@ public class StudentMainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
+                    feedback_card.setVisibility(View.VISIBLE);
 
                     for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                         teacherinsidefeedbacklist.add(dataSnapshot1.getKey());
 
 
                     }
+                    addTeacherDetailstoTeacherDetailsArrayList(teacherinsidefeedbacklist);
+
                 }
-                addTeacherDetailstoTeacherDetailsArrayList(teacherinsidefeedbacklist);
+                else{
+                    feedback_card.setVisibility(View.GONE);
+                }
             }
 
             @Override

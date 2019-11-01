@@ -133,6 +133,7 @@ public class TeacherListActivity extends AppCompatActivity implements View.OnLon
                 floatingActionButton.setOnClickListener(this);
             }
         } else {
+
             selection_list.remove(teacherDetailsArrayList.get(position));
             counter--;
             updateCounter(counter);
@@ -182,7 +183,8 @@ public class TeacherListActivity extends AppCompatActivity implements View.OnLon
 
         for(TeacherDetails teacherDetails:selection_list){
                 hashMap.put(teacherDetails.getUid(),"0");
-            Log.d("test", teacherDetails.getUid());
+            Log.d("venom", teacherDetails.getUid());
+            Log.d("venom", teacherDetails.getTeacher_name());
         }
 
         feedbackRef.child(student_index).updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -202,6 +204,7 @@ public class TeacherListActivity extends AppCompatActivity implements View.OnLon
     void clearActionMode(){
         is_in_action_mode = false;
         teacherDatailsAdapter.notifyDataSetChanged();
+
         unselect_all_item.setVisibility(View.GONE);
         counter_text.setVisibility(View.GONE);
         floatingActionButton.setVisibility(View.GONE);

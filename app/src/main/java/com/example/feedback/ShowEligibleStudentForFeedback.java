@@ -42,11 +42,13 @@ public class ShowEligibleStudentForFeedback extends AppCompatActivity {
         final Intent intent = getIntent();
         student_batch = intent.getExtras().getString("student_batch").substring(0,4);
         student_branch = intent.getExtras().getString("student_branch");
+        Log.d("demon", student_branch);
         student_section = intent.getExtras().getString("student_section");
         studentRef = FirebaseDatabase.getInstance().getReference().child("Users").child("Student");
 
 
         final String student_index=student_batch+"_"+student_branch+"_"+student_section;
+        Log.d("demon", student_index);
         Query query=studentRef.orderByChild("student_index").equalTo(student_index);
 
 
@@ -54,8 +56,7 @@ public class ShowEligibleStudentForFeedback extends AppCompatActivity {
 
         GridLayoutManager gridLayoutManager=new GridLayoutManager(this,3);
         recyclerView.setLayoutManager(gridLayoutManager);
-        Toast.makeText(this,
-                student_batch+" "+student_branch+" "+student_section, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, student_batch+" "+student_branch+" "+student_section, Toast.LENGTH_SHORT).show();
 
 
         FirebaseRecyclerOptions<StudentDetails> options = new FirebaseRecyclerOptions.Builder<StudentDetails>()

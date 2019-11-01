@@ -5,11 +5,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.example.feedback.Model.TeacherDetails;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -37,6 +39,7 @@ public class SingleFeedbackActivty extends AppCompatActivity implements View.OnC
     DatabaseReference studentFeedbackRef;
 
     String TAG="test1";
+    TextView teacher_name;
 
 
 
@@ -50,6 +53,8 @@ public class SingleFeedbackActivty extends AppCompatActivity implements View.OnC
 
         studentFeedbackRef= FirebaseDatabase.getInstance().getReference().child("StudentFeedback").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
+        teacher_profile_image = findViewById(R.id.teacher_profile_image);
+        teacher_name=findViewById(R.id.teacher_name);
 
         teacherRef = FirebaseDatabase.getInstance().getReference().child("Users").child("Teacher");
         student_feedback_ref=FirebaseDatabase.getInstance().getReference().child("StudentFeedback").child(firebaseUser.getUid());
@@ -58,6 +63,8 @@ public class SingleFeedbackActivty extends AppCompatActivity implements View.OnC
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
                     teacherDetails = dataSnapshot.getValue(TeacherDetails.class);
+                    Glide.with(SingleFeedbackActivty.this).load(teacherDetails.getProfile_image()).placeholder(R.drawable.profile_image).centerCrop().into(teacher_profile_image);
+                    teacher_name.setText(teacherDetails.getTeacher_name());
 
                 }
             }
@@ -67,7 +74,6 @@ public class SingleFeedbackActivty extends AppCompatActivity implements View.OnC
 
             }
         });
-        teacher_profile_image = findViewById(R.id.teacher_profile_image);
         param1 = findViewById(R.id.smileRating1);
         param2 = findViewById(R.id.smileRating2);
         param3 = findViewById(R.id.smileRating3);

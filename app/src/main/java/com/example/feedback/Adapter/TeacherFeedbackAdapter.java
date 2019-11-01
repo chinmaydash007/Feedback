@@ -18,6 +18,7 @@ import com.bumptech.glide.request.RequestOptions;
 import com.example.feedback.Model.TeacherDetails;
 import com.example.feedback.R;
 import com.example.feedback.SingleFeedbackActivty;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
@@ -80,7 +81,7 @@ public class TeacherFeedbackAdapter extends RecyclerView.Adapter<TeacherFeedback
     class TeacherFeedbackAdapterViewHolder extends RecyclerView.ViewHolder {
         CircleImageView teacher_profile_image;
         TextView teacher_name;
-        Button submit_btn;
+        FloatingActionButton submit_btn;
 
 
         public TeacherFeedbackAdapterViewHolder(@NonNull View itemView) {
